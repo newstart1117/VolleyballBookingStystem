@@ -17,4 +17,30 @@ public class UserService{
     public Optional<User> getUserById(Long id){
         return userRepository.findById(id);
     }
+
+    public boolean saveUser(User user){
+        userRepository.save(user);
+        return  true;
+    }
+
+    public boolean deleteUserById(Long id){
+        User user = userRepository.getById(id);
+//        if(user == null){
+//            return false;
+//        }
+        userRepository.delete(user);
+        return true;
+    }
+
+    public boolean updateUser(User user){
+//        if(userRepository.findById(user.getUserId()) == null){
+//            return false;
+//        }
+        userRepository.save(user);
+        return  true;
+    }
+
+    public List<User> listUser(){
+        return userRepository.findAll();
+    }
 }

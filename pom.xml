@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>vbs-provider-users-8001</module>
+        <module>vbs-common-api</module>
     </modules>
 
     <properties>
