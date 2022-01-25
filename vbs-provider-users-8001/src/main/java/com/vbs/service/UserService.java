@@ -25,17 +25,17 @@ public class UserService{
 
     public boolean deleteUserById(Long id){
         User user = userRepository.getById(id);
-//        if(user == null){
-//            return false;
-//        }
+        if(user == null){
+            return false;
+        }
         userRepository.delete(user);
         return true;
     }
 
     public boolean updateUser(User user){
-//        if(userRepository.findById(user.getUserId()) == null){
-//            return false;
-//        }
+        if(userRepository.findById(user.getUserId()) == null){
+            return false;
+        }
         userRepository.save(user);
         return  true;
     }
