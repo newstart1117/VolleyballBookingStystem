@@ -8,8 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="vbs-common-api" />
+        <module name="vbs-provider-courts-8011" />
+        <module name="vbs-provider-booking-8021" />
+        <module name="vbs-provider-" />
         <module name="vbs-provider-users-8001" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="vbs-provider-" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

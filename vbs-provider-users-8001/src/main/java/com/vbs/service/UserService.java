@@ -33,7 +33,7 @@ public class UserService{
     }
 
     public boolean updateUser(User user){
-        if(userRepository.findById(user.getUserId()) == null){
+        if(userRepository.findById(user.getId()) == null){
             return false;
         }
         userRepository.save(user);

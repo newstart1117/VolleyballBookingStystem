@@ -55,7 +55,7 @@ public class UserController {
     @PutMapping("/user/{id}")
     public CommonResult updateUser(@PathVariable("id") Long id, @RequestBody User user) {
         log.info("userController: {}", "updateUser()");
-        user.setUserId(id);
+        user.setId(id);
         boolean bool = userService.updateUser(user);
 
         commonResult.setMsg("更新使用者");

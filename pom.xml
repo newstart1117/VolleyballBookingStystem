@@ -11,6 +11,8 @@
     <modules>
         <module>vbs-provider-users-8001</module>
         <module>vbs-common-api</module>
+        <module>vbs-provider-courts-8011</module>
+        <module>vbs-provider-booking-8021</module>
     </modules>
 
     <properties>

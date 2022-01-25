@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class User {
+public class Court {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,38 +21,33 @@ public class User {
     @NonNull
     private String name;    //姓名
     @NonNull
-    private String phone;       //手機
-    private String line;        //Line
-    private int role = 1;           //角色
+    private String country;       //縣市
+    @NonNull
+    private String address;       //地址
+    @NonNull
+    @Column(name = "principalid")
+    private Long principalId;       //負責人
     private int rating = 60;         //評分
     @Column(name = "createdate", updatable = false)
     @JsonFormat(pattern="yyyy/MM/dd")
     @CreationTimestamp
     private Date createDate;    //建立日期
 
-
-    public User(String name, String phone) {
+    public Court(@NonNull String name, @NonNull String country, @NonNull String address, @NonNull long principalId) {
         this.name = name;
-        this.phone = phone;
-        this.createDate = new Date();
-    }
-
-    public User(String name, String phone, String line, int role) {
-        this.name = name;
-        this.phone = phone;
-        this.line = line;
-        this.role = role;
-        this.createDate = new Date();
+        this.country = country;
+        this.address = address;
+        this.principalId = principalId;
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "userId=" + id +
-                ", username='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", line='" + line + '\'' +
-                ", role=" + role +
+        return "Court{" +
+                "courtId=" + id +
+                ", courtName='" + name + '\'' +
+                ", county='" + country + '\'' +
+                ", address='" + address + '\'' +
+                ", principalId='" + principalId + '\'' +
                 ", rating=" + rating +
                 ", createDate=" + createDate +
                 '}';

@@ -1,7 +1,6 @@
 package com.vbs.service;
 
 import com.vbs.model.User;
-import jdk.nashorn.internal.runtime.options.Option;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,7 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 @Transactional
@@ -23,7 +23,7 @@ class UserServiceTest {
     void getUserById() {
         long id = 1;
         Optional<User> users = userService.getUserById(id);
-        String username = users.orElseThrow(NullPointerException::new).getUsername();
+        String username = users.orElseThrow(NullPointerException::new).getName();
         assertEquals("Admin", username);
     }
 
