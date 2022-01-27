@@ -34,7 +34,7 @@ class ActivityServiceTest {
         Date start = new GregorianCalendar(2022, 01, 31, 14, 0).getTime();
         Date end = new GregorianCalendar(2022, 01, 31, 17, 0).getTime();
         Activity example = activityService.getActivityById(1).orElseThrow(NullPointerException::new);
-        Activity activity = new Activity("測試開團", "測試開團的描述", "男網", "純男", start, end, example.getUser(), example.getCourt());
+        Activity activity = new Activity("測試開團", "測試開團的描述", "男網", "純男", 18, start, end, example.getUser(), example.getCourt());
         boolean bool = activityService.saveActivity(activity);
         assertTrue(bool);
     }

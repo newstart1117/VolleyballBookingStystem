@@ -27,6 +27,7 @@ public class Activity {
     private String netHeight;       //網高類型  男網、女網
     @NonNull
     private String sex;             //性別  純男、純女、混排
+    private int quota = 18;         //人數限制
     @Column(name = "starttime", updatable = false)
     @JsonFormat(pattern = "yyyy/MM/dd HH:mm")
     private Date startTime;    //開始時間
@@ -48,11 +49,12 @@ public class Activity {
     @NonNull
     private Court court;       //球場
 
-    public Activity(@NonNull String name, String description, @NonNull String netHeight, @NonNull String sex, Date startTime, Date endTime, @NonNull User user, @NonNull Court court) {
+    public Activity(@NonNull String name, String description, @NonNull String netHeight, @NonNull String sex, int quota, Date startTime, Date endTime, @NonNull User user, @NonNull Court court) {
         this.name = name;
         this.description = description;
         this.netHeight = netHeight;
         this.sex = sex;
+        this.quota = quota;
         this.startTime = startTime;
         this.endTime = endTime;
         this.user = user;
@@ -67,6 +69,7 @@ public class Activity {
                 ", description='" + description + '\'' +
                 ", netHeight='" + netHeight + '\'' +
                 ", sex='" + sex + '\'' +
+                ", quota=" + quota +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
                 ", createDate=" + createDate +
